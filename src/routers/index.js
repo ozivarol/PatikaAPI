@@ -1,0 +1,1 @@
+module.exports.ModelRoutes = require("./Model")
