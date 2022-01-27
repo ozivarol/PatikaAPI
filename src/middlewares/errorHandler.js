@@ -8,8 +8,6 @@ module.exports = (error, req, res, next) => {
             message: error.message || "Internal Server Error....",
         },
     });
-
-
     res.json({
         error: {
             code: error.code || -3,

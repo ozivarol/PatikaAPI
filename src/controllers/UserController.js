@@ -6,12 +6,15 @@ const ApiError = require("../errors/ApiError")
 class UserController {
     create(req, res, next) {
         req.body.password = passwordToHash(req.body.password)
+
         UserService.create(req.body).then(create => {
+
 
 
             res.status(hs.OK).send(create)
         })
             .catch(e => {
+
                 next(new ApiError(e?.message))
             })
     }

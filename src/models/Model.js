@@ -22,5 +22,10 @@ const ModelSchema = new moongose.Schema({
         versionKey: false
     })
 
-
+ModelSchema.post("save", (doc) => {
+    logger.log({
+        level: "info",
+        message: doc,
+    });
+});
 module.exports = moongose.model("model", ModelSchema);

@@ -6,6 +6,13 @@ const UserSchema = new moongose.Schema({
     password: String,
 })
 
+UserSchema.post("save", (doc) => {
+    logger.log({
+        level: "info",
+        message: doc,
+    });
+});
+
 
 
 module.exports = moongose.model("user", UserSchema)
