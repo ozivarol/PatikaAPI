@@ -8,6 +8,9 @@ class BaseService {
     create(data) {
         return new this.BaseModel(data).save()
     }
+    findOne(where) {
+        return this.BaseModel.findOne(where)
+    }
 
 }
 

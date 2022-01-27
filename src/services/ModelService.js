@@ -5,6 +5,11 @@ class ModelService extends BaseService {
     constructor() {
         super(Model)
     }
+    list(where) {
+        return Model.find(where || {}).populate({
+            path: "görev",
+        })
+    }
 }
 
 module.exports = new ModelService()
